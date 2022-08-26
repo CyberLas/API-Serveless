@@ -1,7 +1,29 @@
-import 'dotenv/config'
+'use strict';
 
-import { server as app } from './server'
+module.exports.hello = async (event) => {
+  return {
+	statusCode: 200,
+	body: JSON.stringify(
+		{
+			message: '¡Hello serverless!',
+			input: event,
+		},
+		null,
+		2
+	),
+  }
+}
 
-app.listen(3000, () => {
-	console.log(`🏃 Server Express Running ${3000}`)
-})
+module.exports.helloUser = async (event) => {
+  return {
+	statusCode: 200,
+	body: JSON.stringify(
+		{
+			message: 'Hola Usuario',
+			input: event,
+		},
+		null,
+		2
+	),
+  }
+}

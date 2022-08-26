@@ -11,5 +11,4 @@ describe('GET /', () => {
 		expect(response.statusCode).toBe(200)
 		// console.log(response)
 	}, 1000)
-	
 })
