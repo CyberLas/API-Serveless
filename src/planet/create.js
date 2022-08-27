@@ -1,7 +1,7 @@
-const { connectDynamoDB, getRandom } = require("../../utils"),
-	{ URL, PLANET } = require("../../constants");
+const { connectDynamoDB, getDate, setRequest } = require("../../utils"),
+	{ URL, PLANETDB } = require("../../constants");
 
-const createPlant = async (event) => {
+module.exports.createPlanet = async (event) => {
 	try {
 		const {
 				nombre,
@@ -18,10 +18,10 @@ const createPlant = async (event) => {
 			} = JSON.parse(event.body),
 			result = await connectDynamoDB()
 				.scan({
-					TableName: `${PLANET}`,
+					TableName: `${PLANETDB}`,
 				})
-				.promise(),
-			plant = {
+				.promise();
+		let planet = {
 				id: 100 + result.Items.length,
 				nombre,
 				periodo_rotacion,
@@ -34,32 +34,22 @@ const createPlant = async (event) => {
 				poblacion,
 				residentes,
 				peliculas,
-				creado: getRandom(),
-				editado: getRandom(),
+				creado: getDate(),
+				editado: getDate(),
 				url: `${URL}/${100 + result.Items.length}`,
 			};
 
 		await connectDynamoDB()
 			.put({
-				TableName: `${PLANET}`,
-				Item: plant,
+				TableName: `${PLANETDB}`,
+				Item: planet,
 			})
 			.promise();
 
-		return {
-			status: 200,
-			message: "Request Success",
-			body: plant,
-		};
+		delete planet["id"];
+		
+		return setRequest(200, "Registro Creado", planet);
 	} catch (e) {
-		return {
-			status: 404,
-			body: null,
-			message: e,
-		};
+		return setRequest(404, e);
 	}
-};
-
-module.exports = {
-	createPlant,
 };

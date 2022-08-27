@@ -13,38 +13,38 @@ provider:
       - arn:aws:dynamodb:us-east-1:090689869014:table/planetTable
 
 functions:
-  hello:
-    handler: src/app.hello
+  apiPlanet:
+    handler: src/planet/index.apiPlanet
     events: 
       - httpApi:
           method: GET
           path: /
-  helloUser:
-    handler: src/crud/create.createPlant
+  createPlanet:
+    handler: src/planet/create.createPlanet
     events: 
       - httpApi:
           method: POST
           path: /api/planet/create
-  helloUsers:
-    handler: src/crud/read.readPlanet
+  readPlanet:
+    handler: src/planet/read.readPlanet
     events: 
       - httpApi:
           method: GET
           path: /api/planet/{id}
-  helloUserss:
-    handler: src/crud/read.readAllPlanet
+  readAllPlanet:
+    handler: src/planet/read.readAllPlanet
     events: 
       - httpApi:
           method: GET
           path: /api/planet
-  helloUsersss:
-    handler: src/crud/update.updatePlanet
+  updatePlanet:
+    handler: src/planet/update.updatePlanet
     events: 
       - httpApi:
           method: PUT
           path: /api/planet/update/{id}
-  helloUserssss:
-    handler: src/crud/delete.deletePlanet
+  deletePlanet:
+    handler: src/planet/delete.deletePlanet
     events: 
       - httpApi:
           method: DELETE
