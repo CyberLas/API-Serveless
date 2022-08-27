@@ -17,7 +17,7 @@ const createPlant = async(event) => {
 		
 		plant = {
 			id: (100 + result.Items.length), nombre, periodo_rotacion, periodo_orbital, diametro, clima, 
-			gravedad, terreno, superficie_agua, poblacion, residentes, peliculas, creado, actualizado: creado,
+			gravedad, terreno, superficie_agua, poblacion, residentes, peliculas, creado, editado: creado,
 			url: `https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planets/${100 + result.Items.length}`
 		};
 		

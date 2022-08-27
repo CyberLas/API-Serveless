@@ -37,6 +37,18 @@ functions:
       - httpApi:
           method: GET
           path: /api/planet
+  helloUsersss:
+    handler: src/crud/update.updatePlanet
+    events: 
+      - httpApi:
+          method: PUT
+          path: /api/planet/update/{id}
+  helloUserssss:
+    handler: src/crud/delete.deletePlanet
+    events: 
+      - httpApi:
+          method: DELETE
+          path: /api/planet/delete
 resources:
   Resources: 
     planetTable:

@@ -13,17 +13,3 @@ module.exports.hello = async (event) => {
 	),
   }
 }
-
-module.exports.helloUser = async (event) => {
-  return {
-	statusCode: 200,
-	body: JSON.stringify(
-		{
-			message: 'Hola Usuario',
-			input: event,
-		},
-		null,
-		2
-	),
-  }
-}
