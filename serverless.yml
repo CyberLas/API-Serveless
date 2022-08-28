@@ -1,0 +1,64 @@
+service: api-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+  iamRoleStatements: 
+  - Effect: Allow
+    Action:
+      - dynamodb:*
+    Resource:
+      - arn:aws:dynamodb:us-east-1:090689869014:table/planetTable
+
+functions:
+  apiPlanet:
+    handler: src/planet/index.apiPlanet
+    events: 
+      - httpApi:
+          method: GET
+          path: /
+  createPlanet:
+    handler: src/planet/create.createPlanet
+    events: 
+      - httpApi:
+          method: POST
+          path: /api/planet/create
+  readPlanet:
+    handler: src/planet/read.readPlanet
+    events: 
+      - httpApi:
+          method: GET
+          path: /api/planet/{id}
+  readAllPlanet:
+    handler: src/planet/read.readAllPlanet
+    events: 
+      - httpApi:
+          method: GET
+          path: /api/planet
+  updatePlanet:
+    handler: src/planet/update.updatePlanet
+    events: 
+      - httpApi:
+          method: PUT
+          path: /api/planet/update/{id}
+  deletePlanet:
+    handler: src/planet/delete.deletePlanet
+    events: 
+      - httpApi:
+          method: DELETE
+          path: /api/planet/delete
+resources:
+  Resources: 
+    planetTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: planetTable
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: N
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH

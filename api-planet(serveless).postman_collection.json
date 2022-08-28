@@ -1,0 +1,167 @@
+{
+	"info": {
+		"_postman_id": "fcf20e50-7e90-464f-a8b0-45252e990d1d",
+		"name": "api-planet(serveless)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12671920"
+	},
+	"item": [
+		{
+			"name": "index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readSpecific",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planet/12",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"planet",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\": \"Tatooine\",\r\n    \"periodo_rotacion\": \"23\",\r\n    \"periodo_orbital\": \"304\",\r\n    \"diametro\": \"10465\",\r\n    \"clima\": \"arid\",\r\n    \"gravedad\": \"1 standard\",\r\n    \"terreno\": \"desert\",\r\n    \"superficie_agua\": \"1\",\r\n    \"poblacion\": \"200000\",\r\n    \"residentes\": [\r\n        \"https://swapi.py4e.com/api/people/1/\",\r\n        \"https://swapi.py4e.com/api/people/2/\",\r\n        \"https://swapi.py4e.com/api/people/4/\",\r\n        \"https://swapi.py4e.com/api/people/6/\",\r\n        \"https://swapi.py4e.com/api/people/7/\",\r\n        \"https://swapi.py4e.com/api/people/8/\",\r\n        \"https://swapi.py4e.com/api/people/9/\",\r\n        \"https://swapi.py4e.com/api/people/11/\",\r\n        \"https://swapi.py4e.com/api/people/43/\",\r\n        \"https://swapi.py4e.com/api/people/62/\"\r\n    ],\r\n    \"peliculas\":  [\r\n        \"https://swapi.py4e.com/api/films/1/\",\r\n        \"https://swapi.py4e.com/api/films/3/\",\r\n        \"https://swapi.py4e.com/api/films/4/\",\r\n        \"https://swapi.py4e.com/api/films/5/\",\r\n        \"https://swapi.py4e.com/api/films/6/\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planet/create",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"planet",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateSpecific",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"nombre\": \"Tatooine\",\r\n    \"periodo_rotacion\": \"23\",\r\n    \"periodo_orbital\": \"304\",\r\n    \"diametro\": \"10465\",\r\n    \"clima\": \"arid\",\r\n    \"gravedad\": \"1 standard\",\r\n    \"terreno\": \"desert\",\r\n    \"superficie_agua\": \"1\",\r\n    \"poblacion\": \"200000\",\r\n    \"residentes\": [\r\n        \"https://swapi.py4e.com/api/people/1/\",\r\n        \"https://swapi.py4e.com/api/people/2/\"\r\n    ],\r\n    \"peliculas\":  [\r\n        \"https://swapi.py4e.com/api/films/1/\",\r\n        \"https://swapi.py4e.com/api/films/3/\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planet/update/100",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"planet",
+						"update",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planet",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"planet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAll",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://hj832qcdpa.execute-api.us-east-1.amazonaws.com/api/planet/delete",
+					"protocol": "https",
+					"host": [
+						"hj832qcdpa",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"api",
+						"planet",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
