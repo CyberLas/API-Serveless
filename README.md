@@ -3,6 +3,7 @@
 	<br> Planet-API <br/>
 		v.1.0.2
 </h1>
+
 <span>
 Planet-API es una API de código abierto para la interacción de peticiones, ayudarlo a familiarizarse algunas peticiones y recursos que ofrece este servicio, además puede ser consumidos por solicitudes HTTP
 </span>
