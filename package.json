@@ -1,13 +1,12 @@
 {
 	"name": "api-serverless",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"main": "index.js",
 	"scripts": {
 		"deploy": "serverless deploy --verbose",
 		"jest": "set NODE_OPTIONS=--experimental-vm-modules && npx jest --detectOpenHandles"
 	},
 	"dependencies": {
-		"@middy/http-json-body-parser": "^3.2.2",
 		"aws-sdk": "^2.1203.0",
 		"axios": "^0.27.2",
 		"dotenv": "^16.0.1",

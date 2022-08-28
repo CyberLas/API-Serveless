@@ -50,6 +50,6 @@ module.exports.createPlanet = async (event) => {
 		
 		return setRequest(200, "Registro Creado", planet);
 	} catch (e) {
-		return setRequest(404, e);
+		return setRequest(404, Object.entries({}).length === 0 ? 'Falta algun Parámetro' : e);
 	}
 };
