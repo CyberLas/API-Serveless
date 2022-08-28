@@ -16,6 +16,7 @@ Planet-API es una API de código abierto para la interacción de peticiones, ayu
 * [Configuración de AWS](#configuración-de-aws)
 * [Configuración de Deploy a Serverless de Producción](#configuración-de-deploy-a-serverless-de-producción)
 * [Pruebas Unitarias](#pruebas-unitarias)
+* [Pruebas Postman](#pruebas-postman)
 * [Endpoints del Proyecto](#endpoints-del-proyecto)
 * [Autor](#autor)
 
@@ -103,6 +104,17 @@ Planet-API es una API de código abierto para la interacción de peticiones, ayu
 
 ### Pruebas Unitarias
 1. Ejecutar el Comando: _npm run jest_
+
+<br/>
+
+### Pruebas Unitarias
+1. Abrir su postman.
+2. Crear un nuevo Espacio de Trabajo.
+![image](https://user-images.githubusercontent.com/33170529/187094916-72f55390-90df-4160-b5bc-4ac54050cf0d.png)
+3. Luego Dirigirse a exportar y seleccionar el Archivo _api-planet(serveless).postman_collection.json_
+![image](https://user-images.githubusercontent.com/33170529/187095041-d6bd9a47-4b98-4f1b-aeaf-3154c6e47085.png)
+4. Si se hizo bien la exportación saldra de esta forma:
+![image](https://user-images.githubusercontent.com/33170529/187095102-47178c3c-d7ec-4dd1-b94a-b42b630a917a.png)
 
 <br/>
 
